@@ -10,13 +10,13 @@ function App() {
       <div className="App">
         <nav>
           <ul>
-            <li><Link to="/">Inventory List</Link></li>
+            <li><Link to="/list">Inventory List</Link></li>
             <li><Link to="/add">Add Inventory</Link></li>
           </ul>
         </nav>
 
         <Routes>
-          <Route path="/" element={<InventoryList />} />
+          <Route path="/list" element={<InventoryList />} />
           <Route path="/add" element={<InventoryForm />} />
         </Routes>
       </div>
