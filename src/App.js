@@ -8,9 +8,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <ul class="nav nav-pills">
-            <li class="nav-item"><Link to="/list" class="nav-link">Inventory List</Link></li>
-            <li class="nav-item"><Link to="/add" class="nav-link">Add Inventory</Link></li>
+        <ul className="nav nav-pills">
+            <li className="nav-item"><Link to="/list" className="nav-link">Inventory List</Link></li>
+            <li className="nav-item"><Link to="/add" className="nav-link">Add Inventory</Link></li>
+            <li className="nav-item"><Link to="/etsy" className="nav-link">Etsy Tests</Link></li>
         </ul>
 
         <Routes>
