@@ -8,12 +8,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li><Link to="/list">Inventory List</Link></li>
-            <li><Link to="/add">Add Inventory</Link></li>
-          </ul>
-        </nav>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><Link to="/list" class="nav-link">Inventory List</Link></li>
+            <li class="nav-item"><Link to="/add" class="nav-link">Add Inventory</Link></li>
+        </ul>
 
         <Routes>
           <Route path="/list" element={<InventoryList />} />
