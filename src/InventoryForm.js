@@ -16,7 +16,7 @@ function InventoryForm() {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/inventory', newItem);
+      const response = await axios.post('http://localhost:3001/inventory', newItem);
       console.log('Item created:', response.data);
       // Handle success, e.g., clear form fields, show success message
     } catch (err) {
