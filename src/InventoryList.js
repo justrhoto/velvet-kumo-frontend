@@ -6,7 +6,7 @@ function InventoryList() {
 
   useEffect(() => {
     const fetchInventory = async () => {
-      const response = await axios.get('http://localhost:3000/inventory');
+      const response = await axios.get('http://localhost:3001/');
       setInventory(response.data);
     };
 
