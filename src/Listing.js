@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Card } from 'react-bootstrap';
 
 function Listing() {
   const [listing, setListing] = useState([]);
@@ -14,9 +15,11 @@ function Listing() {
   }, []);
 
   return (
-    <div>
-      <pre>Title: {listing["title"]}</pre>
-    </div>
+    <Card>
+      <Card.Body>
+        <Card.Title>{listing["title"]}</Card.Title>
+      </Card.Body>
+    </Card> 
   );
 }
 
