@@ -9,8 +9,8 @@ import Listing from './Listing';
 
 function App() {
   return (
-    <Router>
-      <Container className="App">
+    <Container>
+      <Router>
         <EtsyNavBar />
 
         <Routes>
@@ -18,8 +18,8 @@ function App() {
           <Route path="/add" element={<InventoryForm />} />
           <Route path="/etsy" element={<Listing />} />
         </Routes>
-      </Container>
-    </Router>
+      </Router>
+    </Container>
   );
 }
 
