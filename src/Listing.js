@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card } from 'react-bootstrap';
+import { Card, Col, Image } from 'react-bootstrap';
 
 function Listing() {
   const [listing, setListing] = useState([]);
@@ -16,9 +16,12 @@ function Listing() {
 
   return (
     <Card>
-      <Card.Body>
-        <Card.Title>{listing["title"]}</Card.Title>
-      </Card.Body>
+        <Col>
+            <Card.Body>
+                <Card.Title>{listing["title"]}</Card.Title>
+                <Card.Text>{listing["description"]}</Card.Text>
+            </Card.Body>
+        </Col>
     </Card> 
   );
 }
