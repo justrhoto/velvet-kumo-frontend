@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Form, Card } from 'react-bootstrap';
 
 function MarginCalculator() {
   const [cost, setCost] = useState('');
@@ -46,46 +46,48 @@ function MarginCalculator() {
   };
 
   return (
-    <Container>
-      <h2 className="mb-4">Margin Calculator</h2>
-      <Form>
-        <Form.Group className="mb-3">
-          <Form.Label>Cost ($):</Form.Label>
-          <Form.Control
-            type="number"
-            value={cost}
-            onChange={handleCostChange}
-            step="0.01"
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Margin (%):</Form.Label>
-          <Form.Control
-            type="number"
-            value={margin}
-            onChange={handleMarginChange}
-            step="0.01"
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Revenue ($):</Form.Label>
-          <Form.Control
-            type="number"
-            value={revenue}
-            onChange={handleRevenueChange}
-            step="0.01"
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Profit ($):</Form.Label>
-          <Form.Control
-            type="number"
-            value={profit}
-            readOnly
-          />
-        </Form.Group>
-      </Form>
-    </Container>
+    <Card style={{ width: '18rem'  }}>
+      <Card.Body>
+        <h2 className="mb-4">Margin Calculator</h2>
+        <Form>
+          <Form.Group className="mb-3">
+            <Form.Label>Cost ($):</Form.Label>
+            <Form.Control
+              type="number"
+              value={cost}
+              onChange={handleCostChange}
+              step="0.01"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Margin (%):</Form.Label>
+            <Form.Control
+              type="number"
+              value={margin}
+              onChange={handleMarginChange}
+              step="0.01"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Revenue ($):</Form.Label>
+            <Form.Control
+              type="number"
+              value={revenue}
+              onChange={handleRevenueChange}
+              step="0.01"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Profit ($):</Form.Label>
+            <Form.Control
+              type="number"
+              value={profit}
+              readOnly
+            />
+          </Form.Group>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 }
 
