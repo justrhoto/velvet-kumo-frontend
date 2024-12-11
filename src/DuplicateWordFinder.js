@@ -33,8 +33,11 @@ function DuplicateWordFinder() {
         return words.map((word, index) => {
             const isDuplicate = duplicates.includes(word.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ''));
             return (
-                <span key={index} style={{ backgroundColor: isDuplicate ? 'yellow' : 'transparent' }}>
-                    {word}{' '}
+                <span key={index}>
+                    <span style={{ backgroundColor: isDuplicate ? 'yellow' : 'transparent' }}>
+                        {word}
+                    </span>
+                    {' '}
                 </span>
             );
         });
