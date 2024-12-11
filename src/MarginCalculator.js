@@ -57,8 +57,8 @@ function MarginCalculator() {
               <Form.Control
                 type="number"
                 value={cost}
-              onChange={handleCostChange}
-              step="0.01"
+                onChange={handleCostChange}
+                step="0.01"
               />
             </InputGroup>
           </Form.Group>
@@ -81,8 +81,8 @@ function MarginCalculator() {
               <Form.Control
                 type="number"
                 value={revenue}
-              onChange={handleRevenueChange}
-              step="0.01"
+                onChange={handleRevenueChange}
+                step="0.01"
               />
             </InputGroup>
           </Form.Group>
