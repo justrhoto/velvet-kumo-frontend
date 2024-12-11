@@ -1,4 +1,5 @@
 import { Container, Form, Button } from 'react-bootstrap';
+import { useState } from 'react';
 
 function DuplicateWordFinder() {
     const [text, setText] = useState('');
@@ -33,7 +34,7 @@ function DuplicateWordFinder() {
         const regex = new RegExp(`\\b(${duplicates.join('|')})\\b`, 'gi');
         return text.replace(regex, '<mark>$1</mark>');
     };
-    
+
     return (
         <Container>
             <h1>Duplicate Word Finder</h1>
