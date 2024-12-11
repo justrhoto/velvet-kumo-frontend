@@ -5,9 +5,7 @@ function DuplicateWordFinder() {
     const [text, setText] = useState('');
     const [duplicates, setDuplicates] = useState([]);
 
-    const findDuplicates = (e) => {
-        e.preventDefault();
-        
+    const findDuplicates = () => {
         // Split text into words, convert to lowercase and remove punctuation
         const words = text.toLowerCase()
             .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
@@ -28,11 +26,18 @@ function DuplicateWordFinder() {
         setDuplicates(duplicateWords);
     };
 
-    const highlightDuplicates = (text) => {
-        if (!text || duplicates.length === 0) return text;
-        
-        const regex = new RegExp(`\\b(${duplicates.join('|')})\\b`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
+    const renderHighlightedText = () => {
+        if (!text) return null;
+
+        const words = text.split(/\s+/);
+        return words.map((word, index) => {
+            const isDuplicate = duplicates.includes(word.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ''));
+            return (
+                <span key={index} style={{ backgroundColor: isDuplicate ? 'yellow' : 'transparent' }}>
+                    {word}{' '}
+                </span>
+            );
+        });
     };
 
     return (
@@ -45,10 +50,13 @@ function DuplicateWordFinder() {
                         as="textarea" 
                         rows={10}
                         placeholder="Paste your text here..."
+                        onChange={(e) => {setText(e.target.value); findDuplicates();}}
                     />
                 </Form.Group>
-                <Button type="submit" variant="primary">Find Duplicates</Button>
             </Form>
+            <div>
+                {renderHighlightedText()}
+            </div>
         </Container>
     );
 }
